@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>管理後台 · 社區團購</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <div class="logo"><span class="mark">⚙</span><span class="txt">管理後台</span></div>
+    <div class="spacer"></div>
+    <a class="chip" href="/">回前台</a>
+    <button class="chip hidden" id="logoutBtn">登出</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- 登入 -->
+  <div id="loginBox" class="card login-box">
+    <h3 class="sub">管理後台登入</h3>
+    <label class="field"><span>Email</span><input class="input" id="liEmail" type="email" autocomplete="username"></label>
+    <label class="field"><span>密碼</span><input class="input" id="liPass" type="password" autocomplete="current-password"></label>
+    <button class="btn block" id="loginBtn">登入</button>
+    <p class="muted" style="margin-top:12px">帳號由伺服器建立：<code>npm run init-admin</code></p>
+  </div>
+
+  <!-- 主體 -->
+  <div id="adminMain" class="hidden">
+    <div class="admin-nav" id="adminNav">
+      <button data-p="dash"     aria-selected="true">訂單與彙總</button>
+      <button data-p="products" aria-selected="false">商品與價格</button>
+      <button data-p="rules"    aria-selected="false">成團規則</button>
+      <button data-p="logi"     aria-selected="false">取貨點與運費</button>
+      <button data-p="look"     aria-selected="false">外觀與文案</button>
+      <button data-p="market"   aria-selected="false">行情比價</button>
+      <button data-p="account"  aria-selected="false">帳號與備份</button>
+    </div>
+    <div id="panel"></div>
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+<script src="/admin.js"></script>
+</body>
+</html>

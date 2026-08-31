@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>社區蔬果團購</title>
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥬</text></svg>">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <div class="logo"><span class="mark" id="logoMark">菜</span><span class="txt" id="logoText">社區團購</span></div>
+    <div class="spacer"></div>
+    <button class="chip" id="lookupBtn">查訂單</button>
+    <a class="chip" href="/admin">管理後台</a>
+    <button class="cart-btn" id="cartBtn"><span>🛒</span><span class="cart-badge" id="cartCount">0</span></button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <h1 id="heroTitle">載入中…</h1>
+    <p id="heroTagline"></p>
+    <div class="hero-stats">
+      <div class="hero-stat"><b id="statDeadline">—</b><span>距離截止</span></div>
+      <div class="hero-stat"><b id="statJoined">0</b><span>已下單筆數</span></div>
+      <div class="hero-stat"><b id="statAmount">NT$0</b><span>累計團購金額</span></div>
+      <div class="hero-stat"><b id="statStatus">—</b><span>成團狀態</span></div>
+    </div>
+    <div class="progress"><i id="progressBar" style="width:0%"></i></div>
+    <p style="margin-top:8px;font-size:12.5px;opacity:.85" id="progressText"></p>
+  </section>
+
+  <div id="announceBox"></div>
+
+  <h2 class="sec">本期商品</h2>
+  <div class="search-bar">
+    <input class="input" id="searchBox" type="search" placeholder="搜尋商品名稱…" autocomplete="off" aria-label="搜尋商品">
+  </div>
+  <div class="toolbar" id="catBar"></div>
+  <div class="grid" id="productGrid"></div>
+  <p class="muted" style="margin:22px 0 40px" id="priceSourceNote"></p>
+</main>
+
+<div class="drawer-mask" id="drawerMask"></div>
+<aside class="drawer" id="drawer" aria-label="購物車">
+  <div class="drawer-head">
+    <button class="icon-btn" id="drawerClose" aria-label="關閉">✕</button>
+    <b id="drawerTitle">購物車</b>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+
+<div class="toast" id="toast"></div>
+<script src="/app.js"></script>
+</body>
+</html>

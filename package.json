@@ -1,0 +1,25 @@
+{
+  "name": "groupbuy-server",
+  "version": "1.1.0",
+  "description": "社區蔬果團購平台 — Node + Express + SQLite",
+  "type": "commonjs",
+  "main": "src/server.js",
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "init-admin": "node src/scripts/initAdmin.js",
+    "sync-market": "node src/scripts/syncMarket.js",
+    "backup": "node src/scripts/backup.js",
+    "smoke": "node test/smoke.js"
+  },
+  "//": "資料庫用 Node 內建的 node:sqlite，所以這裡沒有任何需要編譯的原生模組，npm install 不會用到 node-gyp / Visual Studio。",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.4.1",
+    "helmet": "^8.0.0"
+  }
+}
